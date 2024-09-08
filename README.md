@@ -9,17 +9,18 @@
 Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und skalierbaren Architektur, die es dem Benutzer ermöglicht, nahtlos miteinander zu kommunizieren und die Administratoren das System effizient verwalten können. Wir verwenden eine Client-Server-Architektur, bei der der Server als zentrale Instanz fungiert, um Nachrichten zu verwalten, Benutzerkonten zu überwachen und andere Aufgaben auszuführen. Wir verwenden Java für das Programmieren, während wir Sockets für die Kommunikation zwischen Client und Server verwenden.
 
 **Technologien:**  
-
-
-
+- **Java**: Programmiersprache für plattformunabhängige Entwicklung.
+- **Sockets**: Für die bidirektionale Kommunikation zwischen Client und Server.
+- **Spring Boot**: Für serverseitige Logik und Verwaltung.
+- **JavaFX**: Für die Client-Oberfläche.
+- **MySQL**: Für die Persistenz und Speicherung von Benutzerdaten und Nachrichten.
 
 **Designentscheidungen:**
 1. **Wahl der Middleware (Sockets):** Sockets bieten eine zuverlässige und effiziente Möglichkeit für die Kommunikation zwischen Client und Server. Sie ermöglichen eine bidirektionale Datenübertragung und können leicht in Java implementiert werden, was die Entwicklung erleichtert.
 2. **Wahl der Programmiersprache (Java):** Java bietet eine breite Unterstützung für Netzwerkkommunikation, eine robuste Objektorientierung und eine große Auswahl an Bibliotheken und Frameworks, die bei der Entwicklung von serverseitigen Anwendungen helfen. Darüber hinaus ist Java plattformunabhängig, was die Skalierbarkeit und Portabilität unserer Lösung verbessert.
 3. **Architekturansatz (Client-Server):** Die client-serverbasierte Architektur ermöglicht eine klare Trennung von Client- und Serververantwortlichkeiten, was die Skalierbarkeit und Wartbarkeit verbessert. Der Server übernimmt die zentrale Verwaltung der Nachrichten und anderer Systemfunktionen, während der Client die Benutzeroberfläche und die Benutzerinteraktionen bereitstellt.
+
 **Architekturprinzipien:**
-
-
 - **Transparancy:** Der Client kommuniziert über klar definierte Schnittstellen (der ClientHandler) mit dem Server.
 - **Softwarearchitektur:** Das System ist in Schichten unterteilt: Präsentation, Logik und Daten.
 - **Systemarchitektur:** Verwendet ein synchrones Request-Reply Pattern für die Nachrichtenkommunikation.
@@ -28,8 +29,6 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 - **Fehlersemantik:** Fehler werden dem Benutzer klar kommuniziert.
 - **Idempotenz:** Nachrichtenübermittlung ist idempotent.
 - **Skalierbarkeit:** Der Server unterstützt horizontale Skalierung für hohe Verbindungen.
-
-## Use Cases
 
 ## Use Cases
 
@@ -117,30 +116,12 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
     - **Beschreibung:** Ein Administrator verwaltet Benutzerkonten, überprüft deren Status und verwaltet die Clients.
     - **Akteure:** Administrator (Admin-Client)
 
-
 **User Stories (optional):**
 - Als Benutzer möchte ich Nachrichten senden können, um mit Freunden zu kommunizieren.
 - Als Benutzer möchte ich Nachrichten empfangen können, um über neue Nachrichten informiert zu werden.
 
 **Use Case-Diagramm:**  
 ![Use Case Diagram](path/to/Use-Cases-diagram.png)
-
-## Anforderungen
-
-| Anforderung                        | Erfüllung  | Erläuterung                                                               |
-|------------------------------------|------------|---------------------------------------------------------------------------|
-| **MUST Have Anforderungen**        |            |                                                                           |
-| Echtzeit-Nachrichtenaustausch       | Ja         | Implementiert durch TCP/IP-basierte Kommunikation.                         |
-| Benutzeranmeldung und Authentifizierung | Ja         | Realisiert mit Spring Boot und MySQL zur Verwaltung von Benutzerdaten.     |
-| **SHOULD Have Anforderungen**      |            |                                                                           |
-| Benutzerfreundliche Oberfläche      | Ja         | JavaFX für eine ansprechende UI.                                          |
-| Nachrichtenprotokollierung          | Teilweise  | Nachrichten werden protokolliert, aber keine detaillierte Historie.       |
-| **COULD Have Anforderungen**        |            |                                                                           |
-| Gruppennachrichten                  | Nein       | Derzeit nicht implementiert.                                              |
-| Dateiübertragung                    | Nein       | Keine Unterstützung für Dateitransfer.                                    |
-| **++ Anforderungen**                |            |                                                                           |
-| Push-Benachrichtigungen             | Nein       | Momentan nicht unterstützt, geplant für zukünftige Versionen.            |
-
 
 ## Anforderungen
 
@@ -173,7 +154,6 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 | Asynchrone Kommunikation            | Ja         | Die Kommunikation zwischen Client und Server ist asynchron.                |
 | Three-Tier-Architektur              | Ja         | Datenbank ist auf einem separaten Server in einer Three-Tier-Architektur ausgelagert. |
 | Dezentrale Architektur ohne zentrale Verwaltungsinstanz | Ja | Der Service besteht aus mehreren Instanzen ohne zentrale Verwaltung.       |
-
 
 ## Statisches Modell
 
