@@ -110,3 +110,12 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
 1. **Repository klonen:**
    ```bash
    git clone https://github.com/username/vs-instant-messenger.git
+
+
+
+## Built With
+
+- **Maven** - Dependency Management
+- **Spring Boot** - Server-Framework
+- **JavaFX** - Client-Technologie
+- **MySQL** - Datenbank
