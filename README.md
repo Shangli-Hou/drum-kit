@@ -122,9 +122,9 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 **Use Case-Diagramm:**  
 ![Use Case Diagram](path/to/Use-Cases-diagram.png)
 
-# Anforderungen
+## Anforderungen
 
-## MUST Have Anforderungen
+### MUST Have Anforderungen
 
 | **Anforderung**                       | **Erfüllung** | **Erläuterung**                                                                                   |
 |---------------------------------------|---------------|--------------------------------------------------------------------------------------------------|
@@ -136,7 +136,7 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 | Eindeutige ID für Nutzer               | Ja            | Jeder Nutzer hat einen einzigartigen Benutzernamen als ID (`User`-Klasse).                      |
 | Command Line Interface                 | Ja            | Beide Clients (User und Admin) haben CLI-Schnittstellen (in `Admin`- und `Client`-Klassen).    |
 
-## SHOULD Have Anforderungen
+### SHOULD Have Anforderungen
 
 | **Anforderung**                       | **Erfüllung** | **Erläuterung**                                                                                   |
 |---------------------------------------|---------------|--------------------------------------------------------------------------------------------------|
@@ -146,7 +146,7 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 | Online-Status der Nutzer anzeigen     | Ja            | Echtzeit-Anzeige des Online-Status der Nutzer.                                                  |
 | Benachrichtigungen über neue Nachrichten | Ja          | Nutzer werden aktiv über neue Nachrichten informiert (`ClientHandler` und `Server`).            |
 
-## COULD Have Anforderungen
+### COULD Have Anforderungen
 
 | **Anforderung**                       | **Erfüllung** | **Erläuterung**                                                                                   |
 |---------------------------------------|---------------|--------------------------------------------------------------------------------------------------|
@@ -156,7 +156,7 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 | Heartbeat-Mechanismus                 | Nein          | Derzeit nicht vorhanden.                                                                        |
 | Nutzer-Suche nach Namen               | Nein          | Suchfunktion nach Namen und Vornamen ist nicht implementiert.                                  |
 
-## ++ Anforderungen
+### ++ Anforderungen
 
 | **Anforderung**                       | **Erfüllung** | **Erläuterung**                                                                                   |
 |---------------------------------------|---------------|--------------------------------------------------------------------------------------------------|
@@ -186,9 +186,8 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
 
 ## Datenbankmodell
 
-# Datenbankmodell
 
-## Benutzertabelle
+### Benutzertabelle
 - **Tabelle:** `users`
 - **Spalten:**
   - `userid` (INT, AUTO_INCREMENT, PRIMARY KEY): Eindeutige Benutzer-ID.
@@ -197,19 +196,19 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
   - `banned` (BOOLEAN): Status, ob der Benutzer gesperrt ist oder nicht.
   - `status` (VARCHAR): Aktueller Status des Benutzers (z.B. online, offline).
 
-## Gruppentabelle
+### Gruppentabelle
 - **Tabelle:** `groups`
 - **Spalten:**
   - `name` (VARCHAR, PRIMARY KEY): Name der Gruppe.
 
-## Gruppenzugehörigkeitstabelle
+### Gruppenzugehörigkeitstabelle
 - **Tabelle:** `group_members`
 - **Spalten:**
   - `username` (VARCHAR): Benutzername des Mitglieds.
   - `group_name` (VARCHAR): Name der Gruppe, der der Benutzer angehört.
   - **Fremdschlüssel:** `username` verweist auf `users(username)`, `group_name` verweist auf `groups(name)`.
 
-## Offline-Nachrichtentabelle
+### Offline-Nachrichtentabelle
 - **Tabelle:** `offline_messages`
 - **Spalten:**
   - `id` (INT, AUTO_INCREMENT, PRIMARY KEY): Eindeutige ID für jede Nachricht.
@@ -219,7 +218,7 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
   - `timestamp` (DATETIME): Zeitstempel, wann die Nachricht gesendet wurde.
   - **Fremdschlüssel:** `sender` und `recipient` verweisen auf `users(username)`.
 
-## Gruppen-Nachrichtentabelle
+### Gruppen-Nachrichtentabelle
 - **Tabelle:** `group_messages`
 - **Spalten:**
   - `id` (INT, AUTO_INCREMENT, PRIMARY KEY): Eindeutige ID für jede Nachricht.
