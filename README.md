@@ -123,37 +123,35 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 **Use Case-Diagramm:**  
 ![Use Case Diagram](path/to/Use-Cases-diagram.png)
 
-## Anforderungen
+# Anforderungsübersicht
 
-| Anforderung                        | Erfüllung  | Erläuterung                                                               |
-|------------------------------------|------------|---------------------------------------------------------------------------|
-| **MUST Have Anforderungen**        |            |                                                                           |
-| Textnachrichten versenden           | Ja         | Implementiert durch TCP/IP-basierte Kommunikation.                         |
-| Gruppenkommunikation                | Ja         | Realisiert durch eine Gruppenchat-Funktionalität.                          |
-| Nachrichtenaustausch bei Abwesenheit | Ja         | Nachrichten werden zwischengespeichert und zugestellt, sobald der Empfänger online ist. |
-| Zugriff über Client-Anwendung      | Ja         | Implementiert mit JavaFX für den Client-Zugang.                            |
-| Admin-Client für Systemverwaltung  | Ja         | Admin-Client ermöglicht Konfiguration und Verwaltung.                       |
-| Eindeutige ID für Nutzer            | Ja         | Jeder Nutzer hat eine eindeutige ID für die Adressierung.                   |
-| Command Line Interface              | Ja         | Beide Clients (User und Admin) haben CLI-Schnittstellen.                    |
+| **Anforderung**                                  | **Erfüllung** | **Erläuterung**                                                                                      |
+|--------------------------------------------------|---------------|------------------------------------------------------------------------------------------------------|
+| **MUST Have Anforderungen**                     |               |                                                                                                      |
+| Textnachrichten versenden                        | Ja            | Implementiert durch TCP/IP-basierte Kommunikation.                                                   |
+| Gruppenkommunikation                             | Ja            | Realisiert durch eine Gruppenchat-Funktionalität.                                                    |
+| Nachrichtenaustausch bei Abwesenheit             | Ja            | Nachrichten werden zwischengespeichert und zugestellt, sobald der Empfänger online ist.              |
+| Zugriff über Client-Anwendung                    | Ja            | Implementiert mit JavaFX für den Client-Zugang.                                                      |
+| Admin-Client für Systemverwaltung                | Ja            | Admin-Client ermöglicht Konfiguration und Verwaltung.                                                |
+| Eindeutige ID für Nutzer                         | Ja            | Jeder Nutzer hat eine eindeutige ID für die Adressierung.                                            |
+| Command Line Interface                           | Ja            | Beide Clients (User und Admin) haben CLI-Schnittstellen.                                             |
+| **SHOULD Have Anforderungen**                    |               |                                                                                                      |
+| Parallelverarbeitung von Anfragen                | Ja            | Anfragen werden in separaten Threads verarbeitet.                                                    |
+| Persistenz und Wiederherstellung                 | Ja            | Daten werden in MySQL gespeichert und bei Serverabsturz wiederhergestellt.                          |
+| Überwachung und Statistik durch Admin-Client     | Ja            | Admin-Client bietet Statusüberwachung und Statistiken.                                               |
+| Online-Status der Nutzer anzeigen                | Ja            | Echtzeit-Anzeige des Online-Status der Nutzer.                                                       |
+| Benachrichtigungen über neue Nachrichten         | Ja            | Nutzer werden aktiv über neue Nachrichten informiert.                                                |
+| **COULD Have Anforderungen**                     |               |                                                                                                      |
+| Horizontal Skalierbarkeit                        | Nein          | Derzeit nicht umgesetzt.                                                                            |
+| Erkennung und Behandlung von Nachrichtenverlusten| Nein          | Noch nicht implementiert.                                                                          |
+| Logdateien für Zugriffsprotokollierung            | Nein          | Keine Logdateien für Zugriffe auf den Service vorhanden.                                             |
+| Heartbeat-Mechanismus                            | Nein          | Derzeit nicht vorhanden.                                                                           |
+| Nutzer-Suche nach Namen                          | Nein          | Suchfunktion nach Namen und Vornamen ist nicht implementiert.                                       |
+| **++ Anforderungen**                            |               |                                                                                                      |
+| Asynchrone Kommunikation                         | Ja            | Die Kommunikation zwischen Client und Server ist asynchron.                                          |
+| Three-Tier-Architektur                           | Ja            | Datenbank ist auf einem separaten Server in einer Three-Tier-Architektur ausgelagert.                |
+| Dezentrale Architektur ohne zentrale Verwaltungsinstanz | Ja        | Der Service besteht aus mehreren Instanzen ohne zentrale Verwaltung.                                 |
 
-| **SHOULD Have Anforderungen**      |            |                                                                           |
-| Parallelverarbeitung von Anfragen  | Ja         | Anfragen werden in separaten Threads verarbeitet.                          |
-| Persistenz und Wiederherstellung   | Ja         | Daten werden in MySQL gespeichert und bei Serverabsturz wiederhergestellt. |
-| Überwachung und Statistik durch Admin-Client | Ja | Admin-Client bietet Statusüberwachung und Statistiken.                      |
-| Online-Status der Nutzer anzeigen  | Ja         | Echtzeit-Anzeige des Online-Status der Nutzer.                             |
-| Benachrichtigungen über neue Nachrichten | Ja    | Nutzer werden aktiv über neue Nachrichten informiert.                      |
-
-| **COULD Have Anforderungen**        |            |                                                                           |
-| Horizontal Skalierbarkeit          | Nein       | Derzeit nicht umgesetzt.                                                  |
-| Erkennung und Behandlung von Nachrichtenverlusten | Nein | Noch nicht implementiert.                                                |
-| Logdateien für Zugriffsprotokollierung | Nein | Keine Logdateien für Zugriffe auf den Service vorhanden.                   |
-| Heartbeat-Mechanismus               | Nein       | Derzeit nicht vorhanden.                                                  |
-| Nutzer-Suche nach Namen             | Nein       | Suchfunktion nach Namen und Vornamen ist nicht implementiert.             |
-
-| **++ Anforderungen**                |            |                                                                           |
-| Asynchrone Kommunikation            | Ja         | Die Kommunikation zwischen Client und Server ist asynchron.                |
-| Three-Tier-Architektur              | Ja         | Datenbank ist auf einem separaten Server in einer Three-Tier-Architektur ausgelagert. |
-| Dezentrale Architektur ohne zentrale Verwaltungsinstanz | Ja | Der Service besteht aus mehreren Instanzen ohne zentrale Verwaltung.       |
 
 ## Statisches Modell
 
