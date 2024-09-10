@@ -138,8 +138,8 @@ Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und s
 | **SHOULD Have Anforderungen**                    |               |                                                                                                      |
 | Parallelverarbeitung von Anfragen                | Ja            | Anfragen werden in separaten Threads verarbeitet.                                                    |
 | Persistenz und Wiederherstellung                 | Ja            | Daten werden in MySQL gespeichert und bei Serverabsturz wiederhergestellt.                          |
-| Überwachung und Statistik durch Admin-Client     | Ja            | Admin-Client bietet Statusüberwachung und Statistiken.                                               |
-| Online-Status der Nutzer anzeigen                | Ja            | Echtzeit-Anzeige des Online-Status der Nutzer.                                                       |
+| Überwachung und Statistik durch Admin-Client     | Ja            | Admin-Client bietet Statusüberwachung.                                               |
+| Online-Status der Nutzer anzeigen                | Ja            | Echtzeit-Monitoring des Online-Status.                                                           |
 | Benachrichtigungen über neue Nachrichten         | Ja            | Nutzer werden aktiv über neue Nachrichten informiert.                                                |
 | **COULD Have Anforderungen**                     |               |                                                                                                      |
 | Horizontal Skalierbarkeit                        | Nein          | Derzeit nicht umgesetzt.                                                                            |
