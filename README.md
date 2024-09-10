@@ -244,10 +244,9 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
 
 **Voraussetzungen:**
 - Java Development Kit (JDK) 11 oder höher
-- Spring Boot
 - MySQL
 - Maven (für das Dependency Management)
-- JavaFX (für die Client-Oberfläche)
+
 
 **Installation und Deployment:**
 
@@ -255,11 +254,32 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
    ```bash
    git clone https://github.com/username/vs-instant-messenger.git
 
+2. **Datenbank einrichten:**
+   - **Datenbank erstellen:** Verwenden Sie MySQL, um eine neue Datenbank für das Projekt zu erstellen.
+   - **Tabellen erstellen:** Führen Sie die bereitgestellten SQL-Skripte aus, um die erforderlichen Tabellen (users, groups, group_members, offline_messages, group_messages) zu erstellen.
+
+3. **Projekt konfigurieren:**
+   - **Datenbankkonfiguration:** Stellen Sie sicher, dass die Datenbankverbindungseinstellungen in den entsprechenden Konfigurationsdateien oder Umgebungsvariablen korrekt gesetzt sind.
+
+4. **Projekt bauen:**
+   - Wechseln Sie in das Projektverzeichnis und verwenden Sie Maven, um das Projekt zu erstellen:
+    ```bash
+   mvn clean install
+    
+5. **Anwendung ausführen:**
+   - **Server:** Starten Sie die Server-Anwendung mit:
+    ```bash
+   java -cp target/vs-instant-messenger.jar Server.Main
+(Passen Sie den Klassenpfad und die Hauptklasse nach Bedarf an.)
+ - **Client:** Starten Sie die Client-Anwendung. Stellen Sie sicher, dass sie korrekt konfiguriert ist, um mit dem laufenden Server zu verbinden.
+
+6. **Zugriff auf die Anwendung:**
+   - **Client-Anwendung:** Starten Sie die Client-Anwendung. Sie sollten in der Lage sein, sich mit dem Server zu verbinden und die Nachrichtenfunktionen zu nutzen.
 
 
+ 
 ## Built With
 
 - **Maven** - Dependency Management
-- **Spring Boot** - Server-Framework
-- **JavaFX** - Client-Technologie
+- **Java** - Programmiersprache
 - **MySQL** - Datenbank
