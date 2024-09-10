@@ -283,3 +283,9 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
 - **Maven** - Dependency Management
 - **Java** - Programmiersprache
 - **MySQL** - Datenbank
+
+
+## Built With
+Dieses Projekt ist lizenziert unter der MIT-Lizenz. Siehe die Datei LICENSE für Details.
+
+
