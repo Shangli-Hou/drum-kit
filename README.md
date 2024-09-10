@@ -285,7 +285,10 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
 - **MySQL** - Datenbank
 
 
-## Built With
-Dieses Projekt ist lizenziert unter der MIT-Lizenz. Siehe die Datei LICENSE für Details.
+## License
+Dieses Projekt ist lizenziert unter der MIT-Lizenz. Siehe die Datei [LICENSE](./LICENSE) für Details.
 
 
+## Acknowledgments
+- Ein großes Dankeschön an die Entwickler der verwendeten Frameworks und Bibliotheken.
+- Inspiration durch bestehende Instant-Messaging-Lösungen und bewährte Methoden in der Netzwerkommunikation.
