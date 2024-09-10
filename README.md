@@ -186,9 +186,49 @@ Die API-Dokumentation wird durch Javadoc bereitgestellt. [Javadoc](path/to/api-d
 
 ## Datenbankmodell
 
-**Datenbankmodell:**  
-- **Benutzertabelle:** Speichert Benutzerinformationen.
-- **Nachrichtentabelle:** Speichert gesendete Nachrichten.
+# Datenbankmodell
+
+## Benutzertabelle
+- **Tabelle:** `users`
+- **Spalten:**
+  - `userid` (INT, AUTO_INCREMENT, PRIMARY KEY): Eindeutige Benutzer-ID.
+  - `username` (VARCHAR, UNIQUE): Eindeutiger Benutzername.
+  - `password` (VARCHAR): Passwort des Benutzers.
+  - `banned` (BOOLEAN): Status, ob der Benutzer gesperrt ist oder nicht.
+  - `status` (VARCHAR): Aktueller Status des Benutzers (z.B. online, offline).
+
+## Gruppentabelle
+- **Tabelle:** `groups`
+- **Spalten:**
+  - `name` (VARCHAR, PRIMARY KEY): Name der Gruppe.
+
+## Gruppenzugehörigkeitstabelle
+- **Tabelle:** `group_members`
+- **Spalten:**
+  - `username` (VARCHAR): Benutzername des Mitglieds.
+  - `group_name` (VARCHAR): Name der Gruppe, der der Benutzer angehört.
+  - **Fremdschlüssel:** `username` verweist auf `users(username)`, `group_name` verweist auf `groups(name)`.
+
+## Offline-Nachrichtentabelle
+- **Tabelle:** `offline_messages`
+- **Spalten:**
+  - `id` (INT, AUTO_INCREMENT, PRIMARY KEY): Eindeutige ID für jede Nachricht.
+  - `sender` (VARCHAR): Benutzername des Absenders.
+  - `recipient` (VARCHAR): Benutzername des Empfängers.
+  - `content` (TEXT): Inhalt der Nachricht.
+  - `timestamp` (DATETIME): Zeitstempel, wann die Nachricht gesendet wurde.
+  - **Fremdschlüssel:** `sender` und `recipient` verweisen auf `users(username)`.
+
+## Gruppen-Nachrichtentabelle
+- **Tabelle:** `group_messages`
+- **Spalten:**
+  - `id` (INT, AUTO_INCREMENT, PRIMARY KEY): Eindeutige ID für jede Nachricht.
+  - `group_name` (VARCHAR): Name der Gruppe, in der die Nachricht gesendet wurde.
+  - `sender` (VARCHAR): Benutzername des Absenders.
+  - `content` (TEXT): Inhalt der Nachricht.
+  - `timestamp` (DATETIME): Zeitstempel, wann die Nachricht gesendet wurde.
+  - **Fremdschlüssel:** `sender` verweist auf `users(username)`, `group_name` verweist auf `groups(name)`.
+
 
 **Datenbankschema:**  
 ![Datenbankschema](path/to/database-schema.png)
