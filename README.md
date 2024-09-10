@@ -9,11 +9,10 @@
 Unser Lösungskonzept für den Instant Messenger beruht auf einer robusten und skalierbaren Architektur, die es dem Benutzer ermöglicht, nahtlos miteinander zu kommunizieren und die Administratoren das System effizient verwalten können. Wir verwenden eine Client-Server-Architektur, bei der der Server als zentrale Instanz fungiert, um Nachrichten zu verwalten, Benutzerkonten zu überwachen und andere Aufgaben auszuführen. Wir verwenden Java für das Programmieren, während wir Sockets für die Kommunikation zwischen Client und Server verwenden.
 
 **Technologien:**  
-- **Java**: Programmiersprache für plattformunabhängige Entwicklung.
-- **Sockets**: Für die bidirektionale Kommunikation zwischen Client und Server.
-- **Spring Boot**: Für serverseitige Logik und Verwaltung.
-- **JavaFX**: Für die Client-Oberfläche.
-- **MySQL**: Für die Persistenz und Speicherung von Benutzerdaten und Nachrichten.
+- **Java**: Die gesamte Anwendungsentwicklung erfolgt in Java. Alle bereitgestellten Klassen sind in Java geschrieben.
+- **Sockets**: Für die bidirektionale Kommunikation zwischen Client und Server implementiert. Verwendet in den Klassen `network`, `ClientHandler` und `AdminClientHandler`.
+- **MySQL**: Für die Speicherung und Verwaltung von Benutzerdaten und Nachrichten verwendet. Implementiert in den Klassen `User`, `Group`, `Message` und getestet durch die Klasse `MyJDBC`.
+
 
 **Designentscheidungen:**
 1. **Wahl der Middleware (Sockets):** Sockets bieten eine zuverlässige und effiziente Möglichkeit für die Kommunikation zwischen Client und Server. Sie ermöglichen eine bidirektionale Datenübertragung und können leicht in Java implementiert werden, was die Entwicklung erleichtert.
